@@ -6,6 +6,7 @@ import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 function Navbar() {
     return (
         <>
+        
             <AppBar position="static">
                 {/* o Toolbar é a barra de menu em si */}
                 <Toolbar variant="dense">
