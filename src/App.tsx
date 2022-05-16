@@ -6,7 +6,8 @@ import Home from './paginas/home/Home';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import Login from './paginas/login/Login';
 import './App.css';
-
+import ListaTema from './components/temas/listatema/ListaTema';
+import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
 
 // todo esse conteúdo dentro da função são as tags html que serão renderizadas pela index App.tsx
 
@@ -35,6 +36,14 @@ function App() {
 
             <Route path='/cadastrousuario'>
               <CadastroUsuario/>
+            </Route>
+
+            <Route path='/temas'>
+              <ListaTema/>
+            </Route>
+
+            <Route path='/posts'>
+              <ListaPostagem />
             </Route>
 
           </div>
