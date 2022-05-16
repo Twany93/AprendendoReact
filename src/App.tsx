@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Footer from './components/estaticos/footer/Footer';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import Login from './paginas/login/Login';
 import './App.css';
 
@@ -31,6 +32,11 @@ function App() {
             <Route path='/home'>
               <Home/>
             </Route>
+
+            <Route path='/cadastrousuario'>
+              <CadastroUsuario/>
+            </Route>
+
           </div>
         </Switch>
       <Footer/>  

@@ -1,0 +1,18 @@
+.imagem2{
+    background-image: url(https://www.dialhost.com.br/blog/wp-content/uploads/2019/05/dia-da-internet.png);
+    background-repeat: no-repeat;
+    width:100vh;
+    min-height: 100vh;
+    background-size:cover;
+    background-position:center;
+   /* backgroundSize:'cover' => a imagem ocupe todo o container, com a posição center */
+}
+
+.textos2{
+    font-weight:bold !important;
+}
+
+.btnCancelar{
+    /* espaçameto entre botões */
+    margin-right:20px !important;
+}
