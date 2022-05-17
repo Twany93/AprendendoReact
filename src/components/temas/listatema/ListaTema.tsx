@@ -4,19 +4,19 @@ import { Box, Card, CardActions, CardContent, Button, Typography } from '@materi
 import './ListaTema.css';
 import Tema from "../../../models/Tema";
 import useLocalStorage from 'react-use-localstorage';
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../services/Service';
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([])
   const [token, setToken] = useLocalStorage('token');
-  let history = useHistory();
+  let navigate = useNavigate();
 
   useEffect(()=>{
     if(token == ''){
       alert("Você precisa estar logado")
       // se o usuario não estiver logado ele irá ser direcionado para a tela de login
-      history.push("/login")
+      navigate("/login")
     }
   }, [token])
 

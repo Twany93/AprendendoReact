@@ -28,3 +28,26 @@ export const busca = async(url:any, setDado: any, header:any) => {
     const resposta = await api.get(url, header)
     setDado(resposta.data)
 }
+
+// busca por ID
+export const buscaId = async(url:any, setDado: any, header:any) => {
+    const resposta = await api.get(url, header)
+    setDado(resposta.data)
+}
+
+// Criar os dados da api
+export const post= async(url:any, dados:any, setDado: any, header:any) => {
+    const resposta = await api.post(url, header)
+    setDado(resposta.data)
+}
+
+// Atualizar as informações
+export const put = async(url:any, dados:any, setDado: any, header:any) => {
+    const resposta = await api.put(url, header)
+    setDado(resposta.data)
+}
+
+// Deletar dados
+export const deleteId = async(url:any, header:any) => {
+    await api.delete(url, header)
+}

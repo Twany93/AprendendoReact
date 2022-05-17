@@ -1,54 +1,57 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Footer from './components/estaticos/footer/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/estaticos/navbar/Navbar';
-import Home from './paginas/home/Home';
+import Footer from './components/estaticos/footer/Footer';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
+import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
 import './App.css';
 import ListaTema from './components/temas/listatema/ListaTema';
 import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
-
-// todo esse conteúdo dentro da função são as tags html que serão renderizadas pela index App.tsx
-
-// dentro de uma funçaõ JavaScript, tenho  tem conteúdo html, devido a uma extensão de sintaxe jsx, no caso também utilizamos o typescript, logo arquivo deve ser salvo como .tsx
+import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
+import CadastroTema from './components/temas/cadastroTema/CadastroTema';
+import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
+import DeletarTema from './components/temas/deletarTema/DeletarTema';
 
 
 function App() {
   return (
-    // pense em Router como um GPS, e o Route contem o caminho da rota de cada componente
     <Router>
-      <Navbar/>
-        <Switch>
-          <div style={{minHeight:'100vh'}}>
+      <Navbar />
+      <div style={{ minHeight: '100vh' }}>
+        <Routes>
 
-            <Route exact path='/'>
-              <Login/>
-            </Route>
+          <Route path="/" element={<Login />} />
 
-            <Route path='/login' >
-              <Login/>
-            </Route>
 
-            <Route path='/home'>
-              <Home/>
-            </Route>
 
-            <Route path='/cadastrousuario'>
-              <CadastroUsuario/>
-            </Route>
+          <Route path="/login" element={<Login />} />
 
-            <Route path='/temas'>
-              <ListaTema/>
-            </Route>
+          <Route path="/home" element={<Home />} />
 
-            <Route path='/posts'>
-              <ListaPostagem />
-            </Route>
+          <Route path="/cadastrousuario" element={<CadastroUsuario />} />
 
-          </div>
-        </Switch>
-      <Footer/>  
+          <Route path="/temas" element={<ListaTema />} />
+
+          <Route path="/posts" element={<ListaPostagem />} />
+
+          <Route path="/formularioPostagem" element={<CadastroPost />} />
+
+          <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
+
+          <Route path="/formularioTema" element={<CadastroTema />} />
+
+          <Route path="/formularioTema/:id" element={<CadastroTema />} />
+
+          <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+
+          <Route path="/deletarTema/:id" element={<DeletarTema />} />
+
+
+        </Routes>
+      </div>
+      <Footer />
+
     </Router>
   );
 }

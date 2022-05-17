@@ -1,6 +1,6 @@
 import React, {useState, useEffect,ChangeEvent} from 'react';
 import { Grid , Box, Typography , TextField, Button} from '@material-ui/core';
-import {Link, useHistory} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import {login} from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
@@ -9,7 +9,7 @@ import './Login.css';
 // useState : primeiro Hook responsável por fazer controle do estado do componente, um gancho para adicionar um estado em um componente funcional
 
 function Login(){
-  let history = useHistory();
+  let navigate = useNavigate();
   const [token,setToken] = useLocalStorage('token');
   // setUserLogin : atualizar com novos dados, já que eles estão vazio
   const [userLogin,setUserLogin] = useState<UserLogin>(
@@ -30,7 +30,7 @@ function Login(){
 
         useEffect(()=>{
             if(token!==''){
-              history.push('/home')
+              navigate('/home')
             }
         }, [token])
 
